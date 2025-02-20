@@ -9,16 +9,34 @@ CYAN="\e[36m"
 RESET="\e[0m"                                                                                                                                MAGENTA="\e[35m"      # Normal Pink
 BRIGHT_PINK="\e[95m"  # Light Pink
 
+# Function to install a package if not installed
+install_pkg() {
+    if ! command -v "$1" &> /dev/null; then
+        echo -e "\e[94m[*]\e[0m \e[92mInstalling $1...\e[0m"
+        pkg install "$1" -y
+    fi
+}
 
-# Update and Install Required Packages
-echo -e "${BLUE}[*] Downloading..please wait......${RESET}"
-pkg update -y
-pkg upgrade -y
-pkg install wget -y
-pkg install figlet -y
-pkg install ruby -y
-pkg install gem -y
-pkg install lolcat -y
+# Update & Upgrade Termux
+echo -e "\e[94m[*]\e[0m \e[92mUpdating Termux...\e[0m"
+pkg update -y && pkg upgrade -y
+apt update -y && apt upgrade -y
+
+# Install required packages
+install_pkg ruby
+install_pkg figlet
+install_pkg wget
+install_pkg curl
+install_pkg git
+
+# Install lolcat
+if ! command -v lolcat &> /dev/null; then
+    echo -e "\e[94m[*]\e[0m \e[92mInstalling lolcat...\e[0m"
+    gem install lolcat
+fi
+
+
+# Clear Screen
 clear
 # Setup Custom Figlet Font
 mkdir -p ~/.figlet
