@@ -12,7 +12,7 @@
 
 `pkg update && pkg upgrade -y`
 
-`pkg install git`
+`pkg install git -y`
 
 `git clone https://github.com/Rakibul0909/PDF-Unlocker`
 
