@@ -10,7 +10,8 @@
 
 ## 🔧 Installation  
 
-```bash
-git clone https://github.com/Rakibul0909/PDF-Unlocker
-cd PDF-Unlocker  
-chmod +x* 
+`pkg update && pkg upgrade -y`
+`git clone https://github.com/Rakibul0909/PDF-Unlocker`
+`cd PDF-Unlocker`
+`chmod +x* bruteforce.sh`
+`./bruteforce.sh`
