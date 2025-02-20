@@ -11,6 +11,7 @@
 ## 🔧 Installation  
 
 `pkg update && pkg upgrade -y`
+`pkg install git`
 `git clone https://github.com/Rakibul0909/PDF-Unlocker`
 `cd PDF-Unlocker`
 `chmod +x* bruteforce.sh`
