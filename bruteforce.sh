@@ -18,7 +18,7 @@ apt update -y && apt upgrade -y
 # Show Custom ASCII Banner
 clear
 spin1() {
-echo -e "${YELLOW}"
+echo -e "${BRIGHT_PINK}"
 echo ' /$$$$$$$  /$$$$$$$  /$$$$$$$$                                                  '
 echo '| $$__  $$| $$__  $$| $$_____/                                                  '
 echo '| $$  \ $$| $$  \ $$| $$                                                        '
@@ -38,11 +38,33 @@ echo '      |  $$$$$$/| $$  | $$| $$|  $$$$$$/|  $$$$$$$| $$ \  $$|  $$$$$$$| $$
 echo '       \______/ |__/  |__/|__/ \______/  \_______/|__/  \__/ \_______/|__/       '
 echo -e "${RESET}"
 }
-
+# Show Custom ASCII Banner
+clear
+spin2() {
+echo -e "${GREEN}"
+echo ' /$$$$$$$  /$$$$$$$  /$$$$$$$$                                                  '
+echo '| $$__  $$| $$__  $$| $$_____/                                                  '
+echo '| $$  \ $$| $$  \ $$| $$                                                        '
+echo '| $$$$$$$/| $$  | $$| $$$$$                                                     '
+echo '| $$____/ | $$  | $$| $$__/                                                     '
+echo '| $$      | $$  | $$| $$                                                        '
+echo '| $$      | $$$$$$$/| $$                                                        '
+echo '|__/      |_______/ |__/                                                        '
+echo '                                                                                '
+echo '       /$$   /$$           /$$                     /$$                           '
+echo '      | $$  | $$          | $$                    | $$                           '
+echo '      | $$  | $$ /$$$$$$$ | $$  /$$$$$$   /$$$$$$$| $$   /$$  /$$$$$$   /$$$$$$  '
+echo '      | $$  | $$| $$__  $$| $$ /$$__  $$ /$$_____/| $$  /$$/ /$$__  $$ /$$__  $$ '
+echo '      | $$  | $$| $$  \ $$| $$| $$  \ $$| $$      | $$$$$$/ | $$$$$$$$| $$  \__/ '
+echo '      | $$  | $$| $$  | $$| $$| $$  | $$| $$      | $$_  $$ | $$_____/| $$       '
+echo '      |  $$$$$$/| $$  | $$| $$|  $$$$$$/|  $$$$$$$| $$ \  $$|  $$$$$$$| $$       '
+echo '       \______/ |__/  |__/|__/ \______/  \_______/|__/  \__/ \_______/|__/       '
+echo -e "${RESET}"
+}
 # Function to show banner
 show_banner() {
     echo -e "${YELLOW}================================================================================="
-    echo -e "                             Welcome to PDF-Unlocker  "
+    echo -e "                           ★ Welcome to PDF-Unlocker ★  "
     echo -e "=================================================================================${RESET}\n"
 }
 
@@ -54,7 +76,7 @@ spin1
 show_banner
 echo -e "${CYAN}1. Start Brute-Force Attack"
 echo -e "2. Exit${CYAN}\n"
-read -p "$(echo -e ${GREEN}Set option: ${RESET})" main_option
+read -p "$(echo -e ${GREEN}Set option ⟩ ${RESET})" main_option
 clear
 
 # Exit Condition
@@ -67,13 +89,13 @@ elif [[ "$main_option" != "1" ]]; then
 fi
 
 # Step 2: Wordlist Selection
-spin1
+spin2
 show_banner
 echo -e "${CYAN}1. Custom Wordlist (Auto Path)"
 echo -e "2. Your Wordlist"
 echo -e "3. Exit"
 echo ""
-read -p "$(echo -e ${GREEN}Set option: ${RESET})" wordlist_option
+read -p "$(echo -e ${GREEN}Set option ⟩ ${RESET})" wordlist_option
 echo ""
 
 if [[ "$wordlist_option" == "3" ]]; then
@@ -116,4 +138,5 @@ while IFS= read -r password; do
     fi
 done < "$wordlist"
 
-echo -e "${RED}\n[×] Password Not Found!${RESET}"                                                                                             
+echo -e "${RED}\n[×] Password Not Found!${RESET}"
+echo""                                                                                             
