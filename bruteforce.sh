@@ -14,6 +14,7 @@ BRIGHT_PINK="\e[95m"  # Light Pink
 echo -e "\e[94m[*]\e[0m \e[92mUpdating Termux...\e[0m"
 pkg update -y && pkg upgrade -y
 apt update -y && apt upgrade -y
+
 # Show Custom ASCII Banner
 clear
 spin1() {
@@ -37,47 +38,7 @@ echo '      |  $$$$$$/| $$  | $$| $$|  $$$$$$/|  $$$$$$$| $$ \  $$|  $$$$$$$| $$
 echo '       \______/ |__/  |__/|__/ \______/  \_______/|__/  \__/ \_______/|__/       '
 echo -e "${RESET}"
 }
-# Show Custom ASCII Banner
-spin2() {
-echo -e "${MAGENTA}"
-echo ' /$$$$$$$  /$$$$$$$  /$$$$$$$$                                                  '
-echo '| $$__  $$| $$__  $$| $$_____/                                                  '
-echo '| $$  \ $$| $$  \ $$| $$                                                        '
-echo '| $$$$$$$/| $$  | $$| $$$$$                                                     '
-echo '| $$____/ | $$  | $$| $$__/                                                     '
-echo '| $$      | $$  | $$| $$                                                        '
-echo '| $$      | $$$$$$$/| $$                                                        '
-echo '|__/      |_______/ |__/                                                        '
-echo '                                                                                '
-echo '       /$$   /$$           /$$                     /$$                           '
-echo '      | $$  | $$          | $$                    | $$                           '
-echo '      | $$  | $$ /$$$$$$$ | $$  /$$$$$$   /$$$$$$$| $$   /$$  /$$$$$$   /$$$$$$  '
-echo '      | $$  | $$| $$__  $$| $$ /$$__  $$ /$$_____/| $$  /$$/ /$$__  $$ /$$__  $$ '
-echo '      | $$  | $$| $$  \ $$| $$| $$  \ $$| $$      | $$$$$$/ | $$$$$$$$| $$  \__/ '
-echo '      | $$  | $$| $$  | $$| $$| $$  | $$| $$      | $$_  $$ | $$_____/| $$       '
-echo '      |  $$$$$$/| $$  | $$| $$|  $$$$$$/|  $$$$$$$| $$ \  $$|  $$$$$$$| $$       '
-echo '       \______/ |__/  |__/|__/ \______/  \_______/|__/  \__/ \_______/|__/       '
-echo -e "${RESET}"                                                                                                                           }
-# Show Custom ASCII Banner
-spin3() {                                                                                                                                    echo -e "${GREEN}"
-echo ' /$$$$$$$  /$$$$$$$  /$$$$$$$$                                                  '
-echo '| $$__  $$| $$__  $$| $$_____/                                                  '                                                      echo '| $$  \ $$| $$  \ $$| $$                                                        '
-echo '| $$$$$$$/| $$  | $$| $$$$$                                                     '
-echo '| $$____/ | $$  | $$| $$__/                                                     '
-echo '| $$      | $$  | $$| $$                                                        '
-echo '| $$      | $$$$$$$/| $$                                                        '
-echo '|__/      |_______/ |__/                                                        '
-echo '                                                                                '
-echo '       /$$   /$$           /$$                     /$$                           '
-echo '      | $$  | $$          | $$                    | $$                           '
-echo '      | $$  | $$ /$$$$$$$ | $$  /$$$$$$   /$$$$$$$| $$   /$$  /$$$$$$   /$$$$$$  '
-echo '      | $$  | $$| $$__  $$| $$ /$$__  $$ /$$_____/| $$  /$$/ /$$__  $$ /$$__  $$ '
-echo '      | $$  | $$| $$  \ $$| $$| $$  \ $$| $$      | $$$$$$/ | $$$$$$$$| $$  \__/ '
-echo '      | $$  | $$| $$  | $$| $$| $$  | $$| $$      | $$_  $$ | $$_____/| $$       '
-echo '      |  $$$$$$/| $$  | $$| $$|  $$$$$$/|  $$$$$$$| $$ \  $$|  $$$$$$$| $$       '
-echo '       \______/ |__/  |__/|__/ \______/  \_______/|__/  \__/ \_______/|__/       '
-echo -e "${RESET}"
-}
+
 # Function to show banner
 show_banner() {
     echo -e "${YELLOW}================================================================================="
@@ -89,7 +50,7 @@ show_banner() {
 clear
 
 # Step 1: Main Menu
-spin2
+spin1
 show_banner
 echo -e "${CYAN}1. Start Brute-Force Attack"
 echo -e "2. Exit${CYAN}\n"
@@ -106,31 +67,7 @@ elif [[ "$main_option" != "1" ]]; then
 fi
 
 # Step 2: Wordlist Selection
-spin3
-show_banner
-echo -e "${CYAN}1. Custom Wordlist (Auto Path)"
-echo -e "2. Your Wordlist"
-echo -e "3. Exit"
-echo ""
-read -p "$(echo -e ${GREEN}Set option: ${RESET})" wordlist_option
-echo ""
-
-if [[ "$wordlist_option" == "3" ]]; then
-    echo -e "${RED}Exiting...${RESET}"
-    exit 0
-elif [[ "$wordlist_option" == "1" ]]; then
-    wordlist="/data/data/com.termux/files/home/PDF-Unlocker/wordlist.txt"
-    read -p "$(echo -e ${MAGENTA}➤ Enter the PDF file path ⟩ ${RESET})" pdf_file
-elif [[ "$wordlist_option" == "2" ]]; then
-    read -p "$(echo -e ${MAGENTA}➤ Enter the PDF file path ⟩ ${RESET})" pdf_file
-    echo ""
-    read -p "$(echo -e ${MAGENTA}➤ Enter the wordlist file path ⟩ ${RESET})" wordlist
-else
-    echo -e "${RED}Invalid Option! Exiting...${RESET}"
-    exit 1
-fi
-# Step 2: Wordlist Selection
-spin3
+spin1
 show_banner
 echo -e "${CYAN}1. Custom Wordlist (Auto Path)"
 echo -e "2. Your Wordlist"
@@ -179,5 +116,4 @@ while IFS= read -r password; do
     fi
 done < "$wordlist"
 
-echo -e "${RED}\n[×] Password Not Found!${RESET}"
-                                                                                                                  
+echo -e "${RED}\n[×] Password Not Found!${RESET}"                                                                                             
