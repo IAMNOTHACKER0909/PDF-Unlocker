@@ -14,6 +14,8 @@
 
 `pkg install git -y`
 
+`termux-setup-storage`
+
 `git clone https://github.com/Rakibul0909/PDF-Unlocker`
 
 `cd PDF-Unlocker`
