@@ -14,6 +14,7 @@ BRIGHT_PINK="\e[95m"  # Light Pink
 echo -e "${BLUE}[*] Downloading..please wait......${RESET}"
 pkg update -y
 pkg upgrade -y
+pkg install wget -y
 pkg install figlet -y
 pkg install ruby -y
 pkg install gem -y
