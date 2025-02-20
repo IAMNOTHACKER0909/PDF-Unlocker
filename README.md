@@ -11,6 +11,6 @@
 ## 🔧 Installation  
 
 ```bash
-git clone https://github.com/YourGitHubUsername/PDF-Unlocker.git  
+git clone https://github.com/Rakibul0909/PDF-Unlocker
 cd PDF-Unlocker  
-bash install.sh
+chmod +x* 
