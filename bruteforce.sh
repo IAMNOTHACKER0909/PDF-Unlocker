@@ -6,75 +6,88 @@ BLUE="\e[34m"
 YELLOW="\e[33m"
 RED="\e[31m"
 CYAN="\e[36m"
-RESET="\e[0m"                                                                                                                                MAGENTA="\e[35m"      # Normal Pink
+RESET="\e[0m"
+MAGENTA="\e[35m"      # Normal Pink
 BRIGHT_PINK="\e[95m"  # Light Pink
-
-# Function to install a package if not installed
-install_pkg() {
-    if ! command -v "$1" &> /dev/null; then
-        echo -e "\e[94m[*]\e[0m \e[92mInstalling $1...\e[0m"
-        pkg install "$1" -y
-    fi
-}
 
 # Update & Upgrade Termux
 echo -e "\e[94m[*]\e[0m \e[92mUpdating Termux...\e[0m"
 pkg update -y && pkg upgrade -y
 apt update -y && apt upgrade -y
-
-# Install required packages
-install_pkg ruby
-install_pkg figlet
-install_pkg wget
-install_pkg curl
-install_pkg git
-
-# Install lolcat
-if ! command -v lolcat &> /dev/null; then
-    echo -e "\e[94m[*]\e[0m \e[92mInstalling lolcat...\e[0m"
-    gem install lolcat
-fi
-
-
-# Clear Screen
+# Show Custom ASCII Banner
 clear
-# Setup Custom Figlet Font
-mkdir -p ~/.figlet
-cd ~/.figlet
-if [ ! -f "ANSI Shadow.flf" ]; then
-    wget -q "https://raw.githubusercontent.com/xero/figlet-fonts/master/ANSI%20Shadow.flf"
-fi
-cd ~
-
-# Show Banner
-figlet -f ~/.figlet/ANSI\ Shadow.flf "Welcome" | lolcat
-
-# Function to show banner
-show_banner() {
-    echo -e "${YELLOW}==============================================================="
-    echo -e "                    Welcome to PDF-Unlocker  "
-    echo -e "===============================================================${RESET}\n"
+spin1() {
+echo -e "${YELLOW}"
+echo ' /$$$$$$$  /$$$$$$$  /$$$$$$$$                                                  '
+echo '| $$__  $$| $$__  $$| $$_____/                                                  '
+echo '| $$  \ $$| $$  \ $$| $$                                                        '
+echo '| $$$$$$$/| $$  | $$| $$$$$                                                     '
+echo '| $$____/ | $$  | $$| $$__/                                                     '
+echo '| $$      | $$  | $$| $$                                                        '
+echo '| $$      | $$$$$$$/| $$                                                        '
+echo '|__/      |_______/ |__/                                                        '
+echo '                                                                                '
+echo '       /$$   /$$           /$$                     /$$                           '
+echo '      | $$  | $$          | $$                    | $$                           '
+echo '      | $$  | $$ /$$$$$$$ | $$  /$$$$$$   /$$$$$$$| $$   /$$  /$$$$$$   /$$$$$$  '
+echo '      | $$  | $$| $$__  $$| $$ /$$__  $$ /$$_____/| $$  /$$/ /$$__  $$ /$$__  $$ '
+echo '      | $$  | $$| $$  \ $$| $$| $$  \ $$| $$      | $$$$$$/ | $$$$$$$$| $$  \__/ '
+echo '      | $$  | $$| $$  | $$| $$| $$  | $$| $$      | $$_  $$ | $$_____/| $$       '
+echo '      |  $$$$$$/| $$  | $$| $$|  $$$$$$/|  $$$$$$$| $$ \  $$|  $$$$$$$| $$       '                                                     echo '       \______/ |__/  |__/|__/ \______/  \_______/|__/  \__/ \_______/|__/       '
+echo -e "${RESET}"                                                                                                                           }
+# Show Custom ASCII Banner                                                                                                                   spin2() {
+echo -e "${MAGENTA}"                                                                                                                         echo ' /$$$$$$$  /$$$$$$$  /$$$$$$$$                                                  '
+echo '| $$__  $$| $$__  $$| $$_____/                                                  '
+echo '| $$  \ $$| $$  \ $$| $$                                                        '
+echo '| $$$$$$$/| $$  | $$| $$$$$                                                     '
+echo '| $$____/ | $$  | $$| $$__/                                                     '                                                      echo '| $$      | $$  | $$| $$                                                        '
+echo '| $$      | $$$$$$$/| $$                                                        '
+echo '|__/      |_______/ |__/                                                        '
+echo '                                                                                '                                                      echo '       /$$   /$$           /$$                     /$$                           '
+echo '      | $$  | $$          | $$                    | $$                           '                                                     echo '      | $$  | $$ /$$$$$$$ | $$  /$$$$$$   /$$$$$$$| $$   /$$  /$$$$$$   /$$$$$$  '
+echo '      | $$  | $$| $$__  $$| $$ /$$__  $$ /$$_____/| $$  /$$/ /$$__  $$ /$$__  $$ '
+echo '      | $$  | $$| $$  \ $$| $$| $$  \ $$| $$      | $$$$$$/ | $$$$$$$$| $$  \__/ '
+echo '      | $$  | $$| $$  | $$| $$| $$  | $$| $$      | $$_  $$ | $$_____/| $$       '
+echo '      |  $$$$$$/| $$  | $$| $$|  $$$$$$/|  $$$$$$$| $$ \  $$|  $$$$$$$| $$       '
+echo '       \______/ |__/  |__/|__/ \______/  \_______/|__/  \__/ \_______/|__/       '
+echo -e "${RESET}"
+}
+# Show Custom ASCII Banner
+spin3() {
+echo -e "${GREEN}"
+echo ' /$$$$$$$  /$$$$$$$  /$$$$$$$$                                                  '
+echo '| $$__  $$| $$__  $$| $$_____/                                                  '
+echo '| $$  \ $$| $$  \ $$| $$                                                        '
+echo '| $$$$$$$/| $$  | $$| $$$$$                                                     '
+echo '| $$____/ | $$  | $$| $$__/                                                     '
+echo '| $$      | $$  | $$| $$                                                        '
+echo '| $$      | $$$$$$$/| $$                                                        '
+echo '|__/      |_______/ |__/                                                        '
+echo '                                                                                '
+echo '       /$$   /$$           /$$                     /$$                           '
+echo '      | $$  | $$          | $$                    | $$                           '
+echo '      | $$  | $$ /$$$$$$$ | $$  /$$$$$$   /$$$$$$$| $$   /$$  /$$$$$$   /$$$$$$  '
+echo '      | $$  | $$| $$__  $$| $$ /$$__  $$ /$$_____/| $$  /$$/ /$$__  $$ /$$__  $$ '
+echo '      | $$  | $$| $$  \ $$| $$| $$  \ $$| $$      | $$$$$$/ | $$$$$$$$| $$  \__/ '
+echo '      | $$  | $$| $$  | $$| $$| $$  | $$| $$      | $$_  $$ | $$_____/| $$       '
+echo '      |  $$$$$$/| $$  | $$| $$|  $$$$$$/|  $$$$$$$| $$ \  $$|  $$$$$$$| $$       '
+echo '       \______/ |__/  |__/|__/ \______/  \_______/|__/  \__/ \_______/|__/       '
+echo -e "${RESET}"
+}
+# Function to show banner                                                                                                                    show_banner() {
+    echo -e "${YELLOW}================================================================================="
+    echo -e "                             Welcome to PDF-Unlocker  "
+    echo -e "=================================================================================${RESET}\n"
 }
 
 # Initial Confirmation
-read -p "Do you want to continue? (y/n): " choice
-if [[ "$choice" != "y" && "$choice" != "Y" ]]; then
-    echo "Exiting..." | lolcat
-    exit 0
-fi
-
 clear
 
-# Step 1: Main Menu
-figlet -f ~/.figlet/ANSI\ Shadow.flf "Welcome" | lolcat
-show_banner
-echo -e "${CYAN}1. Start Brute-Force Attack"
+# Step 1: Main Menu                                                                                                                          spin2
+show_banner                                                                                                                                  echo -e "${CYAN}1. Start Brute-Force Attack"
 echo -e "2. Exit${CYAN}\n"
 read -p "$(echo -e ${GREEN}Set option: ${RESET})" main_option
 clear
-
-# Show Banner Again
-figlet -f ~/.figlet/ANSI\ Shadow.flf "welcome" | lolcat
 
 # Exit Condition
 if [[ "$main_option" == "2" ]]; then
@@ -86,6 +99,7 @@ elif [[ "$main_option" != "1" ]]; then
 fi
 
 # Step 2: Wordlist Selection
+spin3
 show_banner
 echo -e "${CYAN}1. Custom Wordlist (Auto Path)"
 echo -e "2. Your Wordlist"
@@ -126,7 +140,6 @@ echo -e "${YELLOW}\n[+] Starting Brute-Force Attack...${RESET}"
 while IFS= read -r password; do
     echo -e "${BLUE}[*] Trying password: $password${RESET}"
 
-    # Try opening PDF with current password
     qpdf --password="$password" --decrypt "$pdf_file" temp.pdf 2>/dev/null
 
     if [[ $? -eq 0 ]]; then
@@ -136,4 +149,6 @@ while IFS= read -r password; do
 done < "$wordlist"
 
 echo -e "${RED}\n[×] Password Not Found!${RESET}"
-echo""
+
+
+                                                                                                                                             
