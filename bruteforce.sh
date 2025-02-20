@@ -14,7 +14,7 @@ BRIGHT_PINK="\e[95m"  # Light Pink
 echo -e "\e[94m[*]\e[0m \e[92mUpdating Termux...\e[0m"
 pkg update -y && pkg upgrade -y
 apt update -y && apt upgrade -y
-
+pkg install qpdf -y
 # Show Custom ASCII Banner
 clear
 spin1() {
