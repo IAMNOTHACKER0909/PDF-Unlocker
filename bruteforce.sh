@@ -33,28 +33,13 @@ echo '      | $$  | $$ /$$$$$$$ | $$  /$$$$$$   /$$$$$$$| $$   /$$  /$$$$$$   /$
 echo '      | $$  | $$| $$__  $$| $$ /$$__  $$ /$$_____/| $$  /$$/ /$$__  $$ /$$__  $$ '
 echo '      | $$  | $$| $$  \ $$| $$| $$  \ $$| $$      | $$$$$$/ | $$$$$$$$| $$  \__/ '
 echo '      | $$  | $$| $$  | $$| $$| $$  | $$| $$      | $$_  $$ | $$_____/| $$       '
-echo '      |  $$$$$$/| $$  | $$| $$|  $$$$$$/|  $$$$$$$| $$ \  $$|  $$$$$$$| $$       '                                                     echo '       \______/ |__/  |__/|__/ \______/  \_______/|__/  \__/ \_______/|__/       '
-echo -e "${RESET}"                                                                                                                           }
-# Show Custom ASCII Banner                                                                                                                   spin2() {
-echo -e "${MAGENTA}"                                                                                                                         echo ' /$$$$$$$  /$$$$$$$  /$$$$$$$$                                                  '
-echo '| $$__  $$| $$__  $$| $$_____/                                                  '
-echo '| $$  \ $$| $$  \ $$| $$                                                        '
-echo '| $$$$$$$/| $$  | $$| $$$$$                                                     '
-echo '| $$____/ | $$  | $$| $$__/                                                     '                                                      echo '| $$      | $$  | $$| $$                                                        '
-echo '| $$      | $$$$$$$/| $$                                                        '
-echo '|__/      |_______/ |__/                                                        '
-echo '                                                                                '                                                      echo '       /$$   /$$           /$$                     /$$                           '
-echo '      | $$  | $$          | $$                    | $$                           '                                                     echo '      | $$  | $$ /$$$$$$$ | $$  /$$$$$$   /$$$$$$$| $$   /$$  /$$$$$$   /$$$$$$  '
-echo '      | $$  | $$| $$__  $$| $$ /$$__  $$ /$$_____/| $$  /$$/ /$$__  $$ /$$__  $$ '
-echo '      | $$  | $$| $$  \ $$| $$| $$  \ $$| $$      | $$$$$$/ | $$$$$$$$| $$  \__/ '
-echo '      | $$  | $$| $$  | $$| $$| $$  | $$| $$      | $$_  $$ | $$_____/| $$       '
 echo '      |  $$$$$$/| $$  | $$| $$|  $$$$$$/|  $$$$$$$| $$ \  $$|  $$$$$$$| $$       '
 echo '       \______/ |__/  |__/|__/ \______/  \_______/|__/  \__/ \_______/|__/       '
 echo -e "${RESET}"
 }
 # Show Custom ASCII Banner
-spin3() {
-echo -e "${GREEN}"
+spin2() {
+echo -e "${MAGENTA}"
 echo ' /$$$$$$$  /$$$$$$$  /$$$$$$$$                                                  '
 echo '| $$__  $$| $$__  $$| $$_____/                                                  '
 echo '| $$  \ $$| $$  \ $$| $$                                                        '
@@ -72,9 +57,29 @@ echo '      | $$  | $$| $$  \ $$| $$| $$  \ $$| $$      | $$$$$$/ | $$$$$$$$| $$
 echo '      | $$  | $$| $$  | $$| $$| $$  | $$| $$      | $$_  $$ | $$_____/| $$       '
 echo '      |  $$$$$$/| $$  | $$| $$|  $$$$$$/|  $$$$$$$| $$ \  $$|  $$$$$$$| $$       '
 echo '       \______/ |__/  |__/|__/ \______/  \_______/|__/  \__/ \_______/|__/       '
+echo -e "${RESET}"                                                                                                                           }
+# Show Custom ASCII Banner
+spin3() {                                                                                                                                    echo -e "${GREEN}"
+echo ' /$$$$$$$  /$$$$$$$  /$$$$$$$$                                                  '
+echo '| $$__  $$| $$__  $$| $$_____/                                                  '                                                      echo '| $$  \ $$| $$  \ $$| $$                                                        '
+echo '| $$$$$$$/| $$  | $$| $$$$$                                                     '
+echo '| $$____/ | $$  | $$| $$__/                                                     '
+echo '| $$      | $$  | $$| $$                                                        '
+echo '| $$      | $$$$$$$/| $$                                                        '
+echo '|__/      |_______/ |__/                                                        '
+echo '                                                                                '
+echo '       /$$   /$$           /$$                     /$$                           '
+echo '      | $$  | $$          | $$                    | $$                           '
+echo '      | $$  | $$ /$$$$$$$ | $$  /$$$$$$   /$$$$$$$| $$   /$$  /$$$$$$   /$$$$$$  '
+echo '      | $$  | $$| $$__  $$| $$ /$$__  $$ /$$_____/| $$  /$$/ /$$__  $$ /$$__  $$ '
+echo '      | $$  | $$| $$  \ $$| $$| $$  \ $$| $$      | $$$$$$/ | $$$$$$$$| $$  \__/ '
+echo '      | $$  | $$| $$  | $$| $$| $$  | $$| $$      | $$_  $$ | $$_____/| $$       '
+echo '      |  $$$$$$/| $$  | $$| $$|  $$$$$$/|  $$$$$$$| $$ \  $$|  $$$$$$$| $$       '
+echo '       \______/ |__/  |__/|__/ \______/  \_______/|__/  \__/ \_______/|__/       '
 echo -e "${RESET}"
 }
-# Function to show banner                                                                                                                    show_banner() {
+# Function to show banner
+show_banner() {
     echo -e "${YELLOW}================================================================================="
     echo -e "                             Welcome to PDF-Unlocker  "
     echo -e "=================================================================================${RESET}\n"
@@ -83,8 +88,10 @@ echo -e "${RESET}"
 # Initial Confirmation
 clear
 
-# Step 1: Main Menu                                                                                                                          spin2
-show_banner                                                                                                                                  echo -e "${CYAN}1. Start Brute-Force Attack"
+# Step 1: Main Menu
+spin2
+show_banner
+echo -e "${CYAN}1. Start Brute-Force Attack"
 echo -e "2. Exit${CYAN}\n"
 read -p "$(echo -e ${GREEN}Set option: ${RESET})" main_option
 clear
@@ -98,6 +105,30 @@ elif [[ "$main_option" != "1" ]]; then
     exit 1
 fi
 
+# Step 2: Wordlist Selection
+spin3
+show_banner
+echo -e "${CYAN}1. Custom Wordlist (Auto Path)"
+echo -e "2. Your Wordlist"
+echo -e "3. Exit"
+echo ""
+read -p "$(echo -e ${GREEN}Set option: ${RESET})" wordlist_option
+echo ""
+
+if [[ "$wordlist_option" == "3" ]]; then
+    echo -e "${RED}Exiting...${RESET}"
+    exit 0
+elif [[ "$wordlist_option" == "1" ]]; then
+    wordlist="/data/data/com.termux/files/home/PDF-Unlocker/wordlist.txt"
+    read -p "$(echo -e ${MAGENTA}➤ Enter the PDF file path ⟩ ${RESET})" pdf_file
+elif [[ "$wordlist_option" == "2" ]]; then
+    read -p "$(echo -e ${MAGENTA}➤ Enter the PDF file path ⟩ ${RESET})" pdf_file
+    echo ""
+    read -p "$(echo -e ${MAGENTA}➤ Enter the wordlist file path ⟩ ${RESET})" wordlist
+else
+    echo -e "${RED}Invalid Option! Exiting...${RESET}"
+    exit 1
+fi
 # Step 2: Wordlist Selection
 spin3
 show_banner
@@ -149,6 +180,4 @@ while IFS= read -r password; do
 done < "$wordlist"
 
 echo -e "${RED}\n[×] Password Not Found!${RESET}"
-
-
-                                                                                                                                             
+                                                                                                                  
