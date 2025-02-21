@@ -7,7 +7,7 @@
 
 # Screenshot
 
-![My Image]()
+![My Image](IMG_20250221_140306.jpg)
 # 🔧 Installation Termux
 
 `pkg update && pkg upgrade -y`
