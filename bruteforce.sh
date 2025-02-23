@@ -1,101 +1,86 @@
 #!/bin/bash
 
 # Colors
+GREENN="\e[1;32m"
 GREEN="\e[32m"
 BLUE="\e[34m"
 YELLOW="\e[33m"
-RED="\e[31m"
-CYAN="\e[36m"
+RED="\e[1;31m"
+CYANN="\e[1;36m"
 RESET="\e[0m"
-MAGENTA="\e[35m"      # Normal Pink
-BRIGHT_PINK="\e[95m"  # Light Pink
+MAGENTA="\e[1;35m"
+BRIGHT_PINK="\e[95m"
+pkill -9 apt
+pkill -9 dpkg
+pkill -9 pkg
+echo""
+echo -e "\e[94m[*]\e[0m \e[92mUpdating Termux.....\e[0m"
+echo ""
 
-# Update & Upgrade Termux
-echo -e "\e[94m[*]\e[0m \e[92mUpdating Termux...\e[0m"
 pkg update -y && pkg upgrade -y
-apt update -y && apt upgrade -y
-pkg install qpdf -y
-# Show Custom ASCII Banner
-clear
-spin1() {
-echo -e "${BRIGHT_PINK}"
-echo ' /$$$$$$$  /$$$$$$$  /$$$$$$$$                                                  '
-echo '| $$__  $$| $$__  $$| $$_____/                                                  '
-echo '| $$  \ $$| $$  \ $$| $$                                                        '
-echo '| $$$$$$$/| $$  | $$| $$$$$                                                     '
-echo '| $$____/ | $$  | $$| $$__/                                                     '
-echo '| $$      | $$  | $$| $$                                                        '
-echo '| $$      | $$$$$$$/| $$                                                        '
-echo '|__/      |_______/ |__/                                                        '
-echo '                                                                                '
-echo '       /$$   /$$           /$$                     /$$                           '
-echo '      | $$  | $$          | $$                    | $$                           '
-echo '      | $$  | $$ /$$$$$$$ | $$  /$$$$$$   /$$$$$$$| $$   /$$  /$$$$$$   /$$$$$$  '
-echo '      | $$  | $$| $$__  $$| $$ /$$__  $$ /$$_____/| $$  /$$/ /$$__  $$ /$$__  $$ '
-echo '      | $$  | $$| $$  \ $$| $$| $$  \ $$| $$      | $$$$$$/ | $$$$$$$$| $$  \__/ '
-echo '      | $$  | $$| $$  | $$| $$| $$  | $$| $$      | $$_  $$ | $$_____/| $$       '
-echo '      |  $$$$$$/| $$  | $$| $$|  $$$$$$/|  $$$$$$$| $$ \  $$|  $$$$$$$| $$       '
-echo '       \______/ |__/  |__/|__/ \______/  \_______/|__/  \__/ \_______/|__/       '
-echo -e "${RESET}"
-}
-# Show Custom ASCII Banner
+
+# Check if qpdf is already installed
+if dpkg -s qpdf &>/dev/null; then
+    echo -e "\e[94m[*]\e[0m \e[92mqpdf is already installed.\e[0m"
+else
+    echo -e "\e[94m[*]\e[0m \e[92mInstalling qpdf......\e[0m"
+    pkg install qpdf -y
+fi
+sleep 1
 clear
 spin2() {
-echo -e "${GREEN}"
-echo ' /$$$$$$$  /$$$$$$$  /$$$$$$$$                                                  '
-echo '| $$__  $$| $$__  $$| $$_____/                                                  '
-echo '| $$  \ $$| $$  \ $$| $$                                                        '
-echo '| $$$$$$$/| $$  | $$| $$$$$                                                     '
-echo '| $$____/ | $$  | $$| $$__/                                                     '
-echo '| $$      | $$  | $$| $$                                                        '
-echo '| $$      | $$$$$$$/| $$                                                        '
-echo '|__/      |_______/ |__/                                                        '
-echo '                                                                                '
-echo '       /$$   /$$           /$$                     /$$                           '
-echo '      | $$  | $$          | $$                    | $$                           '
-echo '      | $$  | $$ /$$$$$$$ | $$  /$$$$$$   /$$$$$$$| $$   /$$  /$$$$$$   /$$$$$$  '
-echo '      | $$  | $$| $$__  $$| $$ /$$__  $$ /$$_____/| $$  /$$/ /$$__  $$ /$$__  $$ '
-echo '      | $$  | $$| $$  \ $$| $$| $$  \ $$| $$      | $$$$$$/ | $$$$$$$$| $$  \__/ '
-echo '      | $$  | $$| $$  | $$| $$| $$  | $$| $$      | $$_  $$ | $$_____/| $$       '
-echo '      |  $$$$$$/| $$  | $$| $$|  $$$$$$/|  $$$$$$$| $$ \  $$|  $$$$$$$| $$       '
-echo '       \______/ |__/  |__/|__/ \______/  \_______/|__/  \__/ \_______/|__/       '
+echo -e "${GREENN}"
+echo '                       /$$$$$$$  /$$$$$$$  /$$$$$$$$                       '
+echo '                      | $$__  $$| $$__  $$| $$_____/                       '
+echo '                      | $$  \ $$| $$  \ $$| $$                             '
+echo '                      | $$$$$$$/| $$  | $$| $$$$$                          '
+echo '                      | $$____/ | $$  | $$| $$__/                          '
+echo '                      | $$      | $$  | $$| $$                             '
+echo '                      | $$      | $$$$$$$/| $$                             '
+echo '                      |__/      |_______/ |__/                             '
+echo '                                                                           '
+echo ' /$$   /$$           /$$                     /$$                           '
+echo '| $$  | $$          | $$                    | $$                           '
+echo '| $$  | $$ /$$$$$$$ | $$  /$$$$$$   /$$$$$$$| $$   /$$  /$$$$$$   /$$$$$$  '
+echo '| $$  | $$| $$__  $$| $$ /$$__  $$ /$$_____/| $$  /$$/ /$$__  $$ /$$__  $$ '
+echo '| $$  | $$| $$  \ $$| $$| $$  \ $$| $$      | $$$$$$/ | $$$$$$$$| $$  \__/ '
+echo '| $$  | $$| $$  | $$| $$| $$  | $$| $$      | $$_  $$ | $$_____/| $$       '
+echo '|  $$$$$$/| $$  | $$| $$|  $$$$$$/|  $$$$$$$| $$ \  $$|  $$$$$$$| $$       '
+echo ' \______/ |__/  |__/|__/ \______/  \_______/|__/  \__/ \_______/|__/       '
 echo -e "${RESET}"
 }
-# Function to show banner
 show_banner() {
-    echo -e "${YELLOW}================================================================================="
-    echo -e "                           ★ Welcome to PDF-Unlocker ★  "
-    echo -e "=================================================================================${RESET}\n"
+    echo -e "\e[1;35m                +----------------------------------------+\e[0m"
+    echo -e "\e[1;35m                |\e[1;33m code   : ★ Rakibul ★                   \e[1;35m|\e[0m"
+    echo -e "\e[1;35m                |\e[1;33m Github : https://github.com/Rakibul0909\e[1;35m|\e[0m"
+    echo -e "\e[1;35m                |\e[1;33m YouTube: ?                             \e[1;35m|\e[0m"
+    echo -e "\e[1;35m                +----------------------------------------+\e[0m"
 }
-
-# Initial Confirmation
-clear
-
 # Step 1: Main Menu
-spin1
-show_banner
-echo -e "${CYAN}1. Start Brute-Force Attack"
-echo -e "2. Exit${CYAN}\n"
-read -p "$(echo -e ${GREEN}Set option ⟩ ${RESET})" main_option
-clear
-
-# Exit Condition
-if [[ "$main_option" == "2" ]]; then
-    echo -e "${RED}Exiting...${RESET}"
-    exit 0
-elif [[ "$main_option" != "1" ]]; then
-    echo -e "${RED}Invalid Option! Exiting...${RESET}"
-    exit 1
-fi
-
-# Step 2: Wordlist Selection
 spin2
 show_banner
-echo -e "${CYAN}1. Custom Wordlist (Auto Path)"
+echo""
+echo""
+echo""
+echo -e "${CYANN}1. Start Brute-Force Attack"
+echo -e "2. Exit${CYANN}\n"
+read -p "$(echo -e ${GREENN}Set option ⟩ ${RESET})" main_option
+
+if [[ "$main_option" == "2" ]]; then
+echo""
+    echo -e "${RED}Exiting...${RESET}"
+echo""
+    exit 0
+fi
+# Step 2: Wordlist Selection
+echo ""
+echo ""
+
+echo -e "${CYANN}1. Custom Wordlist (Auto wordlist)"
 echo -e "2. Your Wordlist"
 echo -e "3. Exit"
 echo ""
-read -p "$(echo -e ${GREEN}Set option ⟩ ${RESET})" wordlist_option
+read -p "$(echo -e ${GREENN}Set option ⟩ ${RESET})" wordlist_option
 echo ""
 
 if [[ "$wordlist_option" == "3" ]]; then
@@ -110,20 +95,23 @@ elif [[ "$wordlist_option" == "2" ]]; then
     read -p "$(echo -e ${MAGENTA}➤ Enter the wordlist file path ⟩ ${RESET})" wordlist
 else
     echo -e "${RED}Invalid Option! Exiting...${RESET}"
-    exit 1
+echo""
+exit 1
 fi
-
+echo""
 # Check if files exist
 if [[ ! -f "$pdf_file" ]]; then
     echo -e "${RED}Error: PDF file not found!${RESET}"
-    exit 1
+echo""
+ exit 1
 fi
-
+echo""
 if [[ ! -f "$wordlist" ]]; then
     echo -e "${RED}Error: Wordlist file not found!${RESET}"
-    exit 1
+echo""
+exit 1
 fi
-
+echo""
 # Start Brute-force Attack
 echo -e "${YELLOW}\n[+] Starting Brute-Force Attack...${RESET}"
 
@@ -134,9 +122,12 @@ while IFS= read -r password; do
 
     if [[ $? -eq 0 ]]; then
         echo -e "${GREEN}\n[✓] Password Found: $password${RESET}"
-        exit 0
+echo""
+    exit 0
     fi
+echo""
 done < "$wordlist"
 
 echo -e "${RED}\n[×] Password Not Found!${RESET}"
-echo""                                                                                             
+echo""
+                                 
