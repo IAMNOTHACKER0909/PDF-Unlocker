@@ -22,4 +22,4 @@
 
 `chmod +x bruteforce.sh`
 
-`./bruteforce.sh`
+`bash bruteforce.sh`
