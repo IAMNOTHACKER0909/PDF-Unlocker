@@ -49,7 +49,7 @@ show_banner() {
     echo -e "${RESET}"
 
     anime "      $(echo -e "${GREEN}★${RESET} ${CYAN}PDF Brute-Force Password Cracker${RESET} ${GREEN}★${RESET}")" "$CYAN"
-    anime "    Coded by: Rakibul | GitHub: Rakibul0909" "$MAGENTA"
+    anime "    Coded by: I AM NOT HACKER | GitHub: IAMNOTHACKER0909" "$MAGENTA"
 }
 
 # Update & Install Dependencies
