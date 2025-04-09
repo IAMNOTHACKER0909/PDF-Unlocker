@@ -16,7 +16,7 @@
 
 `termux-setup-storage`
 
-`git clone https://github.com/IAMNOTHACKER0909/PDF-Unlocker.git`
+`git clone https://github.com/Rakibul0909/PDF-Unlocker.git`
 
 `cd PDF-Unlocker`
 
